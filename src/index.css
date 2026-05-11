@@ -1,155 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Vitality — mint, cream, soft charcoal. Calm, futuristic, premium. */
+/* School Lunch Sustainability Auditor — vibrant, kid-friendly Indian palette
+   All colors HSL. Saffron, leaf green, cream, marigold, turmeric, sky.
+*/
 
 @layer base {
   :root {
-    --background: 150 30% 97%;
-    --foreground: 200 15% 16%;
+    --background: 42 60% 97%;
+    --foreground: 24 30% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 15% 16%;
+    --card-foreground: 24 30% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 15% 16%;
+    --popover-foreground: 24 30% 18%;
 
-    /* Mint green — primary */
-    --primary: 160 55% 45%;
-    --primary-foreground: 150 30% 98%;
-    --primary-glow: 160 70% 65%;
+    /* Saffron orange — primary brand */
+    --primary: 22 92% 55%;
+    --primary-foreground: 42 60% 99%;
+    --primary-glow: 30 100% 65%;
 
-    /* Cream / soft sand */
-    --secondary: 40 50% 92%;
-    --secondary-foreground: 200 15% 20%;
+    /* Leaf green — sustainability accent */
+    --secondary: 130 55% 42%;
+    --secondary-foreground: 42 60% 99%;
 
-    --muted: 150 20% 94%;
-    --muted-foreground: 200 10% 45%;
+    --muted: 42 40% 92%;
+    --muted-foreground: 24 15% 40%;
 
-    --accent: 175 60% 55%;
-    --accent-foreground: 200 15% 16%;
+    /* Marigold yellow */
+    --accent: 45 95% 58%;
+    --accent-foreground: 24 30% 18%;
 
-    --destructive: 5 75% 58%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 78% 55%;
+    --destructive-foreground: 42 60% 99%;
 
-    /* Macro nutrient colors */
-    --macro-protein: 340 70% 60%;
-    --macro-carbs: 35 90% 60%;
-    --macro-fats: 200 70% 60%;
+    /* Traffic light */
+    --impact-low: 130 60% 42%;
+    --impact-low-bg: 130 60% 92%;
+    --impact-med: 38 95% 55%;
+    --impact-med-bg: 38 95% 92%;
+    --impact-high: 5 80% 56%;
+    --impact-high-bg: 5 80% 94%;
 
-    /* Sustainability grades */
-    --grade-a: 160 60% 45%;
-    --grade-b: 100 55% 50%;
-    --grade-c: 45 90% 55%;
-    --grade-d: 25 85% 58%;
-    --grade-f: 5 75% 58%;
+    /* Sky / water */
+    --info: 200 85% 50%;
+    --info-bg: 200 85% 94%;
 
-    --info: 200 80% 55%;
-    --info-bg: 200 80% 95%;
+    --border: 30 40% 85%;
+    --input: 30 40% 88%;
+    --ring: 22 92% 55%;
 
-    --border: 150 20% 88%;
-    --input: 150 20% 90%;
-    --ring: 160 55% 45%;
-
-    --radius: 1.25rem;
+    --radius: 1rem;
 
     /* Gradients */
-    --gradient-mint: linear-gradient(135deg, hsl(160 60% 55%) 0%, hsl(175 65% 60%) 100%);
-    --gradient-cream: linear-gradient(135deg, hsl(40 50% 96%) 0%, hsl(150 30% 97%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.7), hsl(150 30% 97% / 0.4));
-    --gradient-glow: radial-gradient(circle at 30% 20%, hsl(160 70% 75% / 0.4), transparent 60%);
+    --gradient-hero: linear-gradient(135deg, hsl(22 92% 55%) 0%, hsl(45 95% 58%) 50%, hsl(130 55% 50%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(22 92% 60%), hsl(35 95% 60%));
+    --gradient-leaf: linear-gradient(135deg, hsl(130 55% 42%), hsl(160 60% 45%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(42 60% 98%));
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -6px hsl(160 30% 30% / 0.08);
-    --shadow-glow: 0 10px 40px -10px hsl(160 55% 45% / 0.3);
-    --shadow-card: 0 1px 2px hsl(200 15% 16% / 0.04), 0 8px 24px -8px hsl(160 30% 30% / 0.10);
+    --shadow-soft: 0 4px 14px -2px hsl(22 50% 40% / 0.10);
+    --shadow-pop: 0 10px 30px -6px hsl(22 92% 55% / 0.30);
+    --shadow-leaf: 0 10px 30px -6px hsl(130 55% 42% / 0.30);
 
-    --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --sidebar-background: 150 30% 97%;
-    --sidebar-foreground: 200 15% 20%;
-    --sidebar-primary: 160 55% 45%;
-    --sidebar-primary-foreground: 150 30% 98%;
-    --sidebar-accent: 150 20% 94%;
-    --sidebar-accent-foreground: 200 15% 20%;
-    --sidebar-border: 150 20% 88%;
-    --sidebar-ring: 160 55% 45%;
+    --sidebar-background: 42 60% 97%;
+    --sidebar-foreground: 24 30% 18%;
+    --sidebar-primary: 22 92% 55%;
+    --sidebar-primary-foreground: 42 60% 99%;
+    --sidebar-accent: 42 40% 92%;
+    --sidebar-accent-foreground: 24 30% 18%;
+    --sidebar-border: 30 40% 85%;
+    --sidebar-ring: 22 92% 55%;
   }
 
   .dark {
-    --background: 200 20% 8%;
-    --foreground: 150 20% 95%;
-    --card: 200 18% 12%;
-    --card-foreground: 150 20% 95%;
-    --popover: 200 18% 12%;
-    --popover-foreground: 150 20% 95%;
-    --primary: 160 60% 55%;
-    --primary-foreground: 200 20% 8%;
-    --secondary: 200 15% 18%;
-    --secondary-foreground: 150 20% 95%;
-    --muted: 200 15% 16%;
-    --muted-foreground: 150 10% 65%;
-    --accent: 175 60% 55%;
-    --accent-foreground: 200 20% 8%;
-    --destructive: 5 70% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 200 15% 20%;
-    --input: 200 15% 20%;
-    --ring: 160 60% 55%;
+    --background: 24 30% 10%;
+    --foreground: 42 60% 96%;
+    --card: 24 25% 14%;
+    --card-foreground: 42 60% 96%;
+    --popover: 24 25% 14%;
+    --popover-foreground: 42 60% 96%;
+    --primary: 22 92% 60%;
+    --primary-foreground: 24 30% 10%;
+    --secondary: 130 50% 50%;
+    --secondary-foreground: 24 30% 10%;
+    --muted: 24 20% 20%;
+    --muted-foreground: 42 30% 70%;
+    --accent: 45 90% 60%;
+    --accent-foreground: 24 30% 10%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 42 60% 96%;
+    --border: 24 20% 22%;
+    --input: 24 20% 22%;
+    --ring: 22 92% 60%;
   }
 }
 
 @layer base {
-  * { @apply border-border; }
+  * {
+    @apply border-border;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', system-ui, sans-serif;
-    font-feature-settings: "ss01", "cv11";
+    font-family: 'Inter', system-ui, sans-serif;
   }
+
   h1, h2, h3, h4, .font-display {
-    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Fredoka', 'Inter', sans-serif;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
-  .bg-mint-gradient { background: var(--gradient-mint); }
-  .bg-cream-gradient { background: var(--gradient-cream); }
-  .bg-glass-gradient { background: var(--gradient-glass); }
-  .bg-glow-radial { background: var(--gradient-glow); }
-
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+  .bg-warm-gradient {
+    background: var(--gradient-warm);
+  }
+  .bg-leaf-gradient {
+    background: var(--gradient-leaf);
+  }
   .shadow-soft { box-shadow: var(--shadow-soft); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-  .shadow-card { box-shadow: var(--shadow-card); }
-
-  .transition-smooth { transition: var(--transition-smooth); }
-
-  .glass {
-    background: hsl(0 0% 100% / 0.6);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
-    border: 1px solid hsl(0 0% 100% / 0.6);
-  }
-
-  .bento-card {
-    @apply relative rounded-3xl bg-card border border-border/60 shadow-card overflow-hidden;
-    transition: var(--transition-smooth);
-  }
-  .bento-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
-  }
-
-  .text-balance { text-wrap: balance; }
-
-  /* Subtle floating gradient mesh background */
-  .mesh-bg {
-    background-image:
-      radial-gradient(at 10% 0%, hsl(160 70% 80% / 0.45) 0px, transparent 50%),
-      radial-gradient(at 90% 10%, hsl(175 70% 80% / 0.35) 0px, transparent 50%),
-      radial-gradient(at 50% 100%, hsl(40 70% 88% / 0.5) 0px, transparent 50%);
-  }
+  .shadow-pop { box-shadow: var(--shadow-pop); }
+  .shadow-leaf { box-shadow: var(--shadow-leaf); }
+  .transition-bounce { transition: var(--transition-bounce); }
 }
