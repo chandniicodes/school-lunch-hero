@@ -9,6 +9,7 @@ const navItems = [
   { to: "/", label: "Dashboard" },
   { to: "/sustainable-meals", label: "Sustainable Meals" },
   { to: "/planner", label: "Weekly Planner" },
+  { to: "/vitality", label: "Vitality" },
   { to: "/about", label: "About Us" },
 ];
 
